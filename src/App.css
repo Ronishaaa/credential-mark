@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,4 +39,17 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+.container {  
+  height: 30rem;
+  width: 50rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.input {
+  height: 3rem;
+  width: 40rem;
+  font-size: 2rem;
 }
