@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./App.css";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
   }, [inputValue]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(inputValue);
+    navigator.clipboard.writeText(outputValue);
   };
 
   return (
