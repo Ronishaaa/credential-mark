@@ -41,7 +41,7 @@
   color: #888;
 } */
 
-.container {  
+.container {
   height: 29rem;
   position: relative;
   width: 50rem;
@@ -55,7 +55,7 @@
   font-size: 2rem;
 }
 
-.button{
+.button {
   height: 2.5rem;
   width: 2rem;
   background-image: url(/src/assets/clipboard.svg);
@@ -65,4 +65,9 @@
   position: absolute;
   right: 21%;
   bottom: 26%;
+}
+
+.output {
+  display: flex;
+  flex-direction: row;
 }
