@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import useClipboard from "./hooks/useClipboard";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
+  const clipboard = useClipboard();
 
   const handleInputValue = (event) => {
     setInputValue(event.target.value);
@@ -19,7 +21,7 @@ const App = () => {
   }, [inputValue]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(outputValue);
+    clipboard.copy(outputValue);
   };
 
   const handleClear = () => {
@@ -40,9 +42,16 @@ const App = () => {
       <button className="clearButton" onClick={handleClear} />
 
       <h1>Output :</h1>
-      <input type="text" className="input" value={outputValue} readOnly />
 
-      <button className="copyButton" onClick={handleCopy} />
+      <div className="output">
+        <input type="text" className="input" value={outputValue} readOnly />
+        <button
+          className="copyButton"
+          onClick={handleCopy}
+          style={{ backgroundColor: clipboard.copied ? "green" : "black" }}
+        ></button>
+        {clipboard.copied && <p>Copied</p>}
+      </div>
     </div>
   );
 };
