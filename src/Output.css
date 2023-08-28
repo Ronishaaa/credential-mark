@@ -1,0 +1,13 @@
+.container {
+  height: 29rem;
+  position: relative;
+  width: 50rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.input {
+  height: 3rem;
+  width: 40rem;
+  font-size: 2rem;
+}

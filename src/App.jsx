@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 const App = () => {
@@ -22,6 +22,10 @@ const App = () => {
     navigator.clipboard.writeText(outputValue);
   };
 
+  const handleClear = () => {
+    setInputValue("");
+  };
+
   return (
     <div className="container">
       <h1>Input :</h1>
@@ -33,10 +37,12 @@ const App = () => {
         onChange={handleInputValue}
       />
 
+      <button className="clearButton" onClick={handleClear} />
+
       <h1>Output :</h1>
       <input type="text" className="input" value={outputValue} readOnly />
 
-      <button className="button" onClick={handleCopy}></button>
+      <button className="copyButton" onClick={handleCopy} />
     </div>
   );
 };
